@@ -1,6 +1,6 @@
 import { requestMethods } from "./core/constants";
 import { Ease } from "./core/Ease";
-import { EaseInstance } from "./types/ky";
+import { EaseInstance } from "./types/ease";
 import { Input, Options } from "./types/options";
 
 const createInstance = () => {

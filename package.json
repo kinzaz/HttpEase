@@ -1,6 +1,6 @@
 {
   "name": "httpease",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "HTTP client based on the Fetch API",
   "main": "./dist/index.js",
   "scripts": {
@@ -31,6 +31,7 @@
     "node-fetch"
   ],
   "devDependencies": {
+    "@types/node": "^22.5.4",
     "del-cli": "^5.1.0",
     "typescript": "^5.5.4"
   }

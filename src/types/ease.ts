@@ -17,7 +17,7 @@ export type EaseInstance = {
 	//=> `{data: '🦄'}`
 	```
 	*/
-  <T>(url: Input, options?: Options): Promise<T>;
+  (url: Input, options?: Options): Promise<Response>;
 
   /**
 	Fetch the given `url` using the option `{method: 'get'}`.
@@ -25,7 +25,7 @@ export type EaseInstance = {
 	@param url - `Request` object, `URL` object, or URL string.
 	@returns A promise with `Body` methods added.
 	*/
-  get: <T>(url: Input, options?: Options) => Promise<T>;
+  get: (url: Input, options?: Options) => Promise<Response>;
 
   /**
 	Fetch the given `url` using the option `{method: 'post'}`.
@@ -33,7 +33,7 @@ export type EaseInstance = {
 	@param url - `Request` object, `URL` object, or URL string.
 	@returns A promise with `Body` methods added.
 	*/
-  post: <T>(url: Input, options?: Options) => Promise<T>;
+  post: (url: Input, options?: Options) => Promise<Response>;
 
   /**
 	Fetch the given `url` using the option `{method: 'put'}`.
@@ -41,7 +41,7 @@ export type EaseInstance = {
 	@param url - `Request` object, `URL` object, or URL string.
 	@returns A promise with `Body` methods added.
 	*/
-  put: <T>(url: Input, options?: Options) => Promise<T>;
+  put: (url: Input, options?: Options) => Promise<Response>;
 
   /**
 	Fetch the given `url` using the option `{method: 'delete'}`.
@@ -49,7 +49,7 @@ export type EaseInstance = {
 	@param url - `Request` object, `URL` object, or URL string.
 	@returns A promise with `Body` methods added.
 	*/
-  delete: <T>(url: Input, options?: Options) => Promise<T>;
+  delete: (url: Input, options?: Options) => Promise<Response>;
 
   /**
 	Fetch the given `url` using the option `{method: 'patch'}`.
@@ -57,7 +57,7 @@ export type EaseInstance = {
 	@param url - `Request` object, `URL` object, or URL string.
 	@returns A promise with `Body` methods added.
 	*/
-  patch: <T>(url: Input, options?: Options) => Promise<T>;
+  patch: (url: Input, options?: Options) => Promise<Response>;
 
   /**
 	Fetch the given `url` using the option `{method: 'head'}`.
