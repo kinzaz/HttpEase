@@ -1,7 +1,10 @@
 import { Input, InternalOptions, Options } from "../types/options";
+import { ResponsePromise } from "../types/responsePromise";
+import { ObjectEntries } from "../utils/types";
+import { responseTypes } from "./constants";
 
 export class Ease {
-  static async create(input: Input, options: Options) {
+  static create(input: Input, options: Options) {
     const ease = new Ease(input, options);
 
     const function_ = async () => {
@@ -14,7 +17,16 @@ export class Ease {
       return response;
     };
 
-    const result = function_();
+    const result = function_() as ResponsePromise;
+
+    for (const [type] of Object.entries(responseTypes) as ObjectEntries<
+      typeof responseTypes
+    >) {
+      result[type] = async () => {
+        const awaitedResult = await result;
+        return awaitedResult[type]();
+      };
+    }
 
     return result;
   }

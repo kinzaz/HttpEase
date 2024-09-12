@@ -1,4 +1,5 @@
 import { Input, Options } from "./options";
+import { ResponsePromise } from "./responsePromise";
 
 export type EaseInstance = {
   /**
@@ -17,7 +18,7 @@ export type EaseInstance = {
 	//=> `{data: '🦄'}`
 	```
 	*/
-  (url: Input, options?: Options): Promise<Response>;
+  <T>(url: Input, options?: Options): ResponsePromise<T>;
 
   /**
 	Fetch the given `url` using the option `{method: 'get'}`.
@@ -25,7 +26,7 @@ export type EaseInstance = {
 	@param url - `Request` object, `URL` object, or URL string.
 	@returns A promise with `Body` methods added.
 	*/
-  get: (url: Input, options?: Options) => Promise<Response>;
+  get: <T>(url: Input, options?: Options) => ResponsePromise<T>;
 
   /**
 	Fetch the given `url` using the option `{method: 'post'}`.
@@ -33,7 +34,7 @@ export type EaseInstance = {
 	@param url - `Request` object, `URL` object, or URL string.
 	@returns A promise with `Body` methods added.
 	*/
-  post: (url: Input, options?: Options) => Promise<Response>;
+  post: <T>(url: Input, options?: Options) => ResponsePromise<T>;
 
   /**
 	Fetch the given `url` using the option `{method: 'put'}`.
@@ -41,7 +42,7 @@ export type EaseInstance = {
 	@param url - `Request` object, `URL` object, or URL string.
 	@returns A promise with `Body` methods added.
 	*/
-  put: (url: Input, options?: Options) => Promise<Response>;
+  put: <T>(url: Input, options?: Options) => ResponsePromise<T>;
 
   /**
 	Fetch the given `url` using the option `{method: 'delete'}`.
@@ -49,7 +50,7 @@ export type EaseInstance = {
 	@param url - `Request` object, `URL` object, or URL string.
 	@returns A promise with `Body` methods added.
 	*/
-  delete: (url: Input, options?: Options) => Promise<Response>;
+  delete: <T>(url: Input, options?: Options) => ResponsePromise<T>;
 
   /**
 	Fetch the given `url` using the option `{method: 'patch'}`.
@@ -57,7 +58,7 @@ export type EaseInstance = {
 	@param url - `Request` object, `URL` object, or URL string.
 	@returns A promise with `Body` methods added.
 	*/
-  patch: (url: Input, options?: Options) => Promise<Response>;
+  patch: <T>(url: Input, options?: Options) => ResponsePromise<T>;
 
   /**
 	Fetch the given `url` using the option `{method: 'head'}`.
@@ -65,5 +66,5 @@ export type EaseInstance = {
 	@param url - `Request` object, `URL` object, or URL string.
 	@returns A promise with `Body` methods added.
 	*/
-  head: (url: Input, options?: Options) => Promise<unknown>;
+  head: (url: Input, options?: Options) => ResponsePromise;
 };

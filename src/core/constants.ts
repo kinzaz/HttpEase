@@ -6,3 +6,11 @@ export const requestMethods = [
   "head",
   "delete",
 ] as const;
+
+export const responseTypes = {
+  json: "application/json",
+  text: "text/*",
+  formData: "multipart/form-data",
+  arrayBuffer: "*/*",
+  blob: "*/*",
+} as const;
