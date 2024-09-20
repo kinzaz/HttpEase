@@ -39,6 +39,10 @@ export class Ease {
     this._input = input;
     this._options = { ...options };
     this.request = new globalThis.Request(input);
+
+    if (this._options.json !== undefined) {
+      this._options.body = JSON.stringify(this._options.json);
+    }
   }
 
   protected _fetch() {
